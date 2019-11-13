@@ -1,64 +1,17 @@
 * {
   margin: 0px;
   padding: 0px;
-  margin: 0;
-  touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  tap-highlight-color: transparent;
-}
-html {
-  background-color: transparent;
-  overflow: hidden;
-}
-
-body {
-  margin: 0;
-  color: #000;
-  font-weight: 700;
-  font-size: 12px;
-  font-family: arial, Helvetica, sans;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: #efefef;
-}
-
-.main {
-  min-width: 320px;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-  position: relative;
-  overflow: scroll;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  cursor: pointer;
 }
 .content {
   width: 100%;
   max-width: 600px;
   height: 100vh;
-  position: relative;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  overflow: auto;
+  overflow-x: auto;
 }
 .portrait > img {
   position: absolute;
   top: 0;
 }
-
 #button {
   position: fixed;
   bottom: 4%;
@@ -75,12 +28,12 @@ body {
   z-index: 2;
   bottom: 0;
   top: auto;
-  left: calc(50% - 500px);
+  left: calc(50% - 436px);
 }
 
 #layer2 {
   width: 1000px;
-  left: calc(50% - 500px);
+  left: calc(50% - 582px);
 }
 
 #logo {
