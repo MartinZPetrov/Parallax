@@ -2,11 +2,10 @@ window.addEventListener('touchmove', handleTouchMove, false);
 window.addEventListener('touchstart', handleTouchStart, false);
 var logo = document.getElementById('logo');
 var button = document.getElementById('button');
-
+var layer2 = document.getElementById('layer2');
 var xDown = null;
 var yDown = null;
 var endPosX = 0;
-
 
 function getTouches(evt) {
   return (
@@ -44,12 +43,14 @@ function handleTouchMove(event) {
       for (let pos = 0; pos < endPosX; pos += 0.1) {
         logo.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
         button.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
+        layer2.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
       }
     }
   } else { //swipe right
     for (let pos = endPosX; pos > 0; pos -= 0.1) {
-      logo.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
+      logo.style.transform = 'translate3d('+ pos + 'px, 0px, 0px)';
       button.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
+      layer2.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
     }
   }
 }
