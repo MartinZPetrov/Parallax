@@ -1,15 +1,10 @@
-window.addEventListener('deviceorientation', deviceOrientationHandler, false);
 window.addEventListener('touchmove', handleTouchMove, false);
 window.addEventListener('touchstart', handleTouchStart, false);
+
 var xDown = null;
 var yDown = null;
-var pos = 56;
+var endPosX = 0;
 var logo = document.getElementById('logo');
-
-// handles the movement of the device
-function deviceOrientationHandler(event) {
-  // portraitVisiblity(true);
-}
 
 function getTouches(evt) {
   return (
@@ -23,16 +18,34 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
-
   var xUp = event.touches[0].clientX;
 
-  if (xUp < xDown) {
-    for (let index = 0; index < 150; index += 0.1) {
-      logo.style.transform = 'translate3d(' + index + 'px, 0px, 0px)';
-    }
+  //get cursor movement
+  var difference = xDown - xUp;
+
+  //add to the the position to move from start X
+  if (difference > endPosX) {
+    endPosX += difference;
   } else {
-    for (let index = 150; index > 0; index -= 0.1) {
-      logo.style.transform = 'translate3d(' + index + 'px, 0px, 0px)';
+    endPosX = Math.abs(difference)
+  }
+
+  //reset if negative
+  if (endPosX > window.outerWidth) {
+    endPosX -= difference;
+  }
+  
+  // translate the logo by x
+  //swipe left
+  if (xUp < xDown) {
+    if (endPosX <= window.outerWidth) {
+      for (let pos = 0; pos < endPosX; pos += 0.1) {
+        logo.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
+      }
+    }
+  } else { //swipe right
+    for (let pos = endPosX; pos > 0; pos -= 0.1) {
+      logo.style.transform = 'translate3d(' + pos + 'px, 0px, 0px)';
     }
   }
 }
