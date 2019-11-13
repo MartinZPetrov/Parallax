@@ -13,7 +13,6 @@
   top: 0;
 }
 #button {
-  position: absolute;
   bottom: 4%;
   top: auto;
   left: 0;
@@ -30,13 +29,11 @@
   bottom: 0;
   top: auto;
   left: calc(50% - 436px);
-  transition: all 2s ease 0.1s;
 }
 
 #layer2 {
   width: 1000px;
   left: calc(50% - 582px);
-  transition: all 2s ease 0.1s;
 }
 
 #logo {
