@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  margin: 0;
+  touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  tap-highlight-color: transparent;
+}
+html {
+  background-color: transparent;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: arial, Helvetica, sans;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #efefef;
+}
+
+.main {
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  cursor: pointer;
+}
+.content {
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  overflow: auto;
+}
+.portrait > img {
+  position: absolute;
+  top: 0;
+}
+
+#button {
+  position: fixed;
+  bottom: 4%;
+  top: auto;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  z-index: 5;
+  width: 60%;
+}
+
+#layer1 {
+  z-index: 2;
+  bottom: 0;
+  top: auto;
+  left: calc(50% - 500px);
+}
+
+#layer2 {
+  width: 1000px;
+  left: calc(50% - 500px);
+}
+
+#logo {
+  left: 10%;
+  width: 100%;
+  max-width: 280px;
+  top: 15%;
+  transition: all 3s ease 0.5s;
+}
+
+.portrait {
+  height: 100vh;
+  width: 600px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.landscape {
+  background: url(images/landscape.jpg) no-repeat center / 60%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #000;
+}
+
+.scroll-indicator {
+  height: 2px;
+  position: absolute;
+  top: 0;
+  width: 600px;
+  z-index: 5;
+}
+
+.scroll-indicator .scrollbar-thumb {
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  top: 0;
+  width: 80px;
+  left: 33%;
+  z-index: 6;
+  height: 100%;
+}
+
+@media screen and (orientation: landscape) {
+  .portrait {
+    display: none;
+  }
+}
+@media screen and (orientation: portrait) {
+  .landscape {
+    display: none;
+  }
+}
