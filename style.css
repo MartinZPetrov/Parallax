@@ -33,7 +33,6 @@ body {
   display: block;
   z-index: 5;
   width: 40%;
-  transition: all 2s ease 0.1s;
   left: 10%;
 }
 
@@ -47,7 +46,6 @@ body {
 #layer2 {
   width: 1000px;
   left: calc(50% - 582px);
-  transition: all 2s ease 0.1s;
 }
 
 #logo {
@@ -55,7 +53,6 @@ body {
   width: 100%;
   max-width: 280px;
   top: 15%;
-  transition: all 2s ease 0.1s;
 }
 
 .landscape {
